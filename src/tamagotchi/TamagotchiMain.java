@@ -15,17 +15,18 @@ public class TamagotchiMain {
         Tamagotchi tama = new Tamagotchi();
         String name = scanner.nextLine();
         tama.setName(name);
-//        int age = scanner.nextInt();
-//        tama.setAge(age);
-//        String color = scanner.nextLine();
-//        tama.setColor(color);
-//        int height = scanner.nextInt();
-//        tama.setHeight(height);
-//        int weight = scanner.nextInt();
-//        tama.setWeight(weight);
+        int age = scanner.nextInt();
+        tama.setAge(age);
+        String color = scanner.nextLine();
+        tama.setColor(color);
+        scanner.nextLine();
+        int height = scanner.nextInt();
+        tama.setHeight(height);
+        int weight = scanner.nextInt();
+        tama.setWeight(weight);
 
         boolean alive = false;
-        System.out.println(alive);
+//        System.out.println(alive);
         System.out.println(tama.toString());
         do {
             System.out.println("Quelle action voulez-vous effectuer à votre Tamagotchi? 1 pour dormir, 2 pour manger, 3 pour marcher");
@@ -49,7 +50,7 @@ public class TamagotchiMain {
             } else {
                 alive = false;
             }
-            System.out.println(alive);
+//            System.out.println(alive);
             System.out.println(tama.toString());
         } while (alive);
 

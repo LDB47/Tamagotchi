@@ -76,27 +76,43 @@ public class Tamagotchi {
         this.color = color;
     }
 
+    /**
+     * Method eat
+     */
     public void eat() {
         energy -= 2;
         weight += 2;
     }
     
+    /**
+     * Method walk
+     */
     public void walk() {
         energy -= 5;
         weight -= 1;
     }
     
+    /**
+     * Method sleep
+     */
     public void sleep() {
         energy += 1;
         System.out.println("Voulez-vous que votre Tamagotchi continue de dormir? Entrez oui ou non.");
         String continueSleep = scanner.nextLine();
         if (continueSleep.equals("oui")) {
             energy += 1;
-        } else {
+        } else if (continueSleep.equals("non")){
             System.out.println("Votre Tamagotchi est réveillé! Il est prêt pour de nouvelles aventures!");
+        } else {
+            System.out.println("Veuillez rentrer oui ou non.");
         }
     }
     
+    /**
+     * 
+     * @param bool
+     * @return bool to check the status
+     */
     public boolean status(boolean bool) {
         
         if (energy < 0 || energy == 0) {
@@ -105,11 +121,11 @@ public class Tamagotchi {
             System.out.println("Oh no!! Le tamagotchi " + this.name + " est MORT!!! Il n'avait plus d'énergie!");
         } else if (weight > 15) {
             bool = false;
-            System.out.println("Oh no!! Le tamagotchi " + this.name + " est MORT!!! Il était obèse!");
+            System.out.println("Oh no!! Le tamagotchi " + this.name + " est MORT!!! Il était trop gros!");
         } else {
             bool = true;
         }
-        System.out.println(bool);
+//        System.out.println(bool);
         return bool;
     }
 
