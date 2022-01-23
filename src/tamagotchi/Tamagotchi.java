@@ -88,8 +88,8 @@ public class Tamagotchi {
      * Method walk
      */
     public void walk() {
-        energy -= 5;
-        weight -= 1;
+        energy -= 4;
+        weight -= 2;
     }
     
     /**
@@ -99,13 +99,21 @@ public class Tamagotchi {
         energy += 1;
         System.out.println("Voulez-vous que votre Tamagotchi continue de dormir? Entrez oui ou non.");
         String continueSleep = scanner.nextLine();
-        if (continueSleep.equals("oui")) {
+          if (continueSleep.equals("oui")) {
             energy += 1;
         } else if (continueSleep.equals("non")){
             System.out.println("Votre Tamagotchi est réveillé! Il est prêt pour de nouvelles aventures!");
         } else {
             System.out.println("Veuillez rentrer oui ou non.");
-        }
+        }  
+    }
+    
+    /**
+     * Method run
+     */
+    public void run() {
+        energy -= 8;
+        weight -= 5;
     }
     
     /**
@@ -114,7 +122,6 @@ public class Tamagotchi {
      * @return bool to check the status
      */
     public boolean status(boolean bool) {
-        
         if (energy < 0 || energy == 0) {
             energy = 0;
             bool = false;
@@ -125,7 +132,6 @@ public class Tamagotchi {
         } else {
             bool = true;
         }
-//        System.out.println(bool);
         return bool;
     }
 
